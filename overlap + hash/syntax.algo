@@ -1,0 +1,47 @@
+ALGORITHM data_struc
+VAR
+    tab: ARRAY_OF_INTEGER;
+    tab2: array_integer;
+    i,j,sum: INTEGER ;
+BEGIN
+    sum:= 0;
+    tab := array_integer [15,3,5,4]
+    tab2:= array_integer[15,5,2,0,8]
+    overlapping := array_integer[]
+    FOR i FROM 0 TO tab.length-1 STEP step  DO
+     FOR j FROM 0 TO tab2.length-1 STEP step  DO
+        IF (tab[i] == tab[j]) THEN
+             sum := sum+(tab[i]*2);
+             overlapping.Add(tab[i])
+        END_IF
+    END_FOR    
+    END_FOR
+    IF (overlapping.length > 0) THEN
+        write ("the overlapping numbers are", overlapping)
+        ELSE
+            write ("no overlappung numbers")
+        END_IF
+    END_IF
+END
+
+ALGORITHM data_hash
+VAR
+    htab: HASH_TABLE<integer,integer>;
+    sum,i,j: INTEGER;
+    tab1:= array_integer;
+    tab2:= array_integer;
+BEGIN
+ tab1:= array_integer[1,5,15,4]
+ tab2:= array_integer[2,5,15,8]
+ sum:= 0;
+ FOR i FROM 0 TO tab1.length-1 STEP step  DO
+     FOR j FROM 0 TO tab2.length-1 STEP step  DO
+         IF (tab1.get[i] == tab2.get[j]) THEN
+             htab.insert(tab[i]);
+         END_IF
+     END_FOR
+ END_FOR
+  FOR i FROM 0 TO htab.lenght-1 STEP step  DO
+      sum+= (htab.get[i]*2);
+  END_FOR
+END
